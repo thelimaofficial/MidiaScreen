@@ -1,0 +1,484 @@
+/* =========================================================
+   MídiaScreen · style.css (pro)
+   Complemento ao Tailwind: tokens, UX, acessibilidade
+   ========================================================= */
+
+/* ------------------- Design Tokens ------------------- */
+:root{
+  /* Cores base (dark site) */
+  --ms-bg:         #0a0814;       /* fundo principal */
+  --ms-surface:    rgba(15,23,42,.40);
+  --ms-surface-2:  rgba(15,23,42,.60);
+  --ms-border:     #1f2937;       /* slate-800 */
+  --ms-text:       #e2e8f0;       /* slate-200 */
+  --ms-muted:      #94a3b8;       /* slate-400 */
+
+  /* Acentos (Sky/Cyan) */
+  --ms-accent:     #00eeff;       /* sky-500 */
+  --ms-accent-2:   #11b9d6;       /* cyan-400 */
+
+  /* Tipografia & espaçamento */
+  --ms-radius-1:   12px;
+  --ms-radius-2:   16px;
+  --ms-radius-3:   20px;
+  --ms-ring:       3px;
+  --ms-gap-1:      .5rem;
+  --ms-gap-2:      .75rem;
+  --ms-gap-3:      1rem;
+
+  /* Microinterações */
+  --ms-dur-1:      .15s;
+  --ms-dur-2:      .25s;
+  --ms-ease-1:     cubic-bezier(.2,.7,.2,1);
+  --ms-shadow-1:   0 10px 30px -20px rgba(0,0,0,.65);
+  --ms-shadow-2:   0 30px 60px -35px rgba(0,0,0,.6);
+}
+
+/* Wide gamut (displays P3) */
+@media (color-gamut: p3){
+  :root{
+    --ms-accent: #8b5cf6;
+    --ms-accent-2: #06b6d4;
+  }
+}
+
+/* ------------------- Base / Reset leve ------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body{
+  background: var(--ms-bg);
+  color: var(--ms-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg, video, canvas { display:block; max-width:100%; height:auto; }
+
+::selection{ background: color-mix(in oklab, var(--ms-accent) 30%, white); color:#0b1220; } color-mix(in oklab, var(--ms-accent) 35%, white); color:#0f172a; }
+
+/* Acessibilidade: foco visível consistente */
+:where(a, button, input, select, textarea, summary):focus-visible{
+  outline: 2px solid var(--ms-accent-2);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Reduzir movimento quando solicitado */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+/* ------------------- Header / Navegação ------------------- */
+.site-header{
+  transition: background-color var(--ms-dur-2) var(--ms-ease-1),
+              border-color var(--ms-dur-2) var(--ms-ease-1),
+              box-shadow var(--ms-dur-2) var(--ms-ease-1);
+  z-index: 2000 !important; /* acima do Leaflet */
+  isolation: isolate;       /* stacking context próprio */
+}
+.site-header.is-scrolled{
+  background: rgba(2,6,23,.90);
+  border-color: rgba(15,23,42,.70);
+  box-shadow: var(--ms-shadow-1);
+  backdrop-filter: saturate(120%) blur(8px);
+}
+
+/* (Opcional) se tiver topbar separada, aplique .topbar no HTML */
+.topbar{ position:relative; z-index:1500; }
+
+/* Link ativo no menu (JS injeta aria-current="page") */
+header nav a[aria-current="page"]{
+  color:#fff !important;
+  position:relative;
+}
+header nav a[aria-current="page"]::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-10px; height:2px;
+  background: linear-gradient(90deg,var(--ms-accent),var(--ms-accent-2));
+  border-radius: 2px;
+}
+
+/* ------------------- “Reveal on scroll” ------------------- */
+.reveal{
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .5s var(--ms-ease-1), transform .5s var(--ms-ease-1);
+}
+.reveal.in{ opacity:1; transform:none; }
+
+/* ------------------- Abas (Contato) ------------------- */
+.tab-btn{
+  border: 1px solid var(--ms-border);
+  background: var(--ms-surface-2);
+  color: var(--ms-text);
+  padding: .5rem 1rem;
+  border-radius: var(--ms-radius-1);
+  font-weight: 600;
+  transition: filter var(--ms-dur-1) var(--ms-ease-1),
+              transform .06s var(--ms-ease-1),
+              box-shadow var(--ms-dur-1) var(--ms-ease-1);
+  will-change: filter, transform;
+}
+.tab-btn:hover{ filter: brightness(1.08); }
+.tab-btn:active{ transform: translateY(1px); }
+.tab-btn[aria-selected="true"]{
+  background: linear-gradient(135deg,var(--ms-accent),var(--ms-accent-2));
+  color:#0b1220;
+  border-color: transparent;
+  box-shadow: 0 10px 30px -18px color-mix(in oklab, var(--ms-accent-2) 60%, transparent);
+}
+
+/* ------------------- Formulários ------------------- */
+.field{
+  display:block; width:100%;
+  border-radius: var(--ms-radius-1);
+  border: 1px solid var(--ms-border);
+  background: var(--ms-surface-2);
+  color: var(--ms-text);
+  padding: .75rem .875rem;
+  transition: border-color var(--ms-dur-1) var(--ms-ease-1),
+              box-shadow var(--ms-dur-1) var(--ms-ease-1),
+              background var(--ms-dur-1) var(--ms-ease-1);
+}
+.field::placeholder{ color: color-mix(in oklab, var(--ms-muted) 92%, white); }
+.field:focus{
+  border-color: var(--ms-accent-2);
+  box-shadow: 0 0 0 var(--ms-ring) color-mix(in oklab, var(--ms-accent-2) 15%, transparent);
+  background: rgba(2,6,23,.75);
+}
+.field[disabled], .field[aria-disabled="true"]{ opacity:.6; cursor:not-allowed; }
+
+input[type="checkbox"]{ accent-color: var(--ms-accent-2); border-radius: .5rem; }
+
+.hint{ font-size:.8rem; color: var(--ms-muted); }
+
+/* Validação manual via classe */
+.invalid{
+  border-color:#ef4444 !important;
+  box-shadow: 0 0 0 var(--ms-ring) rgba(239,68,68,.15) !important;
+}
+
+/* Feedback de erro (suave) */
+@keyframes ms-shake{
+  10%,90% { transform:translateX(-1px); }
+  20%,80% { transform:translateX(2px); }
+  30%,50%,70% { transform:translateX(-4px); }
+  40%,60% { transform:translateX(4px); }
+}
+.form-error-shake{ animation: ms-shake .35s ease both; }
+
+/* ------------------- Botões utilitários (opcionais) ------------------- */
+.btn{
+  display:inline-flex; align-items:center; gap:.5rem;
+  border:1px solid var(--ms-border);
+  background: var(--ms-surface-2);
+  color: var(--ms-text);
+  padding:.75rem 1rem;
+  border-radius: var(--ms-radius-1);
+  font-weight: 600;
+  transition: transform .06s var(--ms-ease-1), background var(--ms-dur-1) var(--ms-ease-1);
+}
+.btn:hover{ background: rgba(2,6,23,.70); }
+.btn:active{ transform: translateY(1px); }
+
+.btn--primary{
+  border-color: transparent;
+  background: linear-gradient(135deg,var(--ms-accent),var(--ms-accent-2));
+  color:#0b1220;
+  box-shadow: 0 10px 30px -18px color-mix(in oklab, var(--ms-accent-2) 60%, transparent);
+}
+.btn--primary:hover{ filter: brightness(1.06); }
+
+/* ------------------- Cards / Listas ------------------- */
+.card{
+  border: 1px solid var(--ms-border);
+  background: var(--ms-surface);
+  border-radius: var(--ms-radius-2);
+  padding: 1rem;
+  box-shadow: none;
+}
+.card--glass{
+  background: rgba(2,6,23,.35);
+  backdrop-filter: blur(6px) saturate(120%);
+}
+
+.li-icon{ display:flex; gap:.5rem; align-items:flex-start; }
+.li-icon > .i{ margin-top:.2rem; }
+
+/* ------------------- Timeline (Sobre) ------------------- */
+.ms-tl{
+  position: relative;
+  margin: 0;
+  padding-left: 1.75rem;
+  list-style: none;
+}
+.ms-tl::before{
+  content:"";
+  position:absolute;
+  left: 10px;
+  top: .25rem;
+  bottom: .25rem;
+  width: 2px;
+  background: linear-gradient(180deg,var(--ms-accent),var(--ms-accent-2));
+  border-radius: 2px;
+  opacity:.95;
+}
+.ms-tl__item{
+  position: relative;
+  padding-left: .5rem;
+  margin: 1rem 0;
+  color: #e5e7eb;
+}
+.ms-tl__item::before{
+  content:"";
+  position:absolute;
+  left: -11px;
+  top: 1.1em;
+  transform: translateY(-50%);
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,var(--ms-accent),var(--ms-accent-2));
+  border: 2px solid rgba(2,6,23,.95);
+  box-shadow: 0 8px 18px -10px rgba(34,211,238,.85);
+}
+@media (min-width: 768px){
+  .ms-tl__item{ margin: 1.1rem 0; }
+}
+
+/* ------------------- Tabelas ------------------- */
+.table{
+  width:100%; border-collapse:separate; border-spacing:0; overflow:hidden;
+  border:1px solid var(--ms-border); border-radius: var(--ms-radius-1);
+}
+.table th, .table td{ padding:.75rem 1rem; }
+.table thead th{ background: rgba(2,6,23,.75); color: var(--ms-text); text-align:left; }
+.table tbody tr{ border-top:1px solid var(--ms-border); }
+.table tbody tr:hover{ background: rgba(2,6,23,.35); }
+
+/* ------------------- Badges ------------------- */
+.badge{
+  display:inline-flex; align-items:center; gap:.35rem;
+  border:1px solid var(--ms-border);
+  background: var(--ms-surface-2);
+  color: var(--ms-text);
+  border-radius:999px; padding:.25rem .6rem; font-size:.75rem; font-weight:600;
+}
+
+/* ------------------- Leaflet / Mapa ------------------- */
+#mapAreas,
+#mapAreas .leaflet-container{ position: relative; z-index:0; }  /* abaixo do header */
+#mapAreas{ height:360px; width:100%; border-radius: var(--ms-radius-1); overflow:hidden; }
+
+/* Controles com leve contraste (site dark + tile claro) */
+.leaflet-control-zoom a{
+  border-radius: 10px !important;
+  border: 1px solid rgba(15,23,42,.35) !important;
+  box-shadow: 0 8px 24px -18px rgba(2,6,23,.7);
+}
+.leaflet-touch .leaflet-control-zoom a{ width:34px; height:34px; line-height:34px; }
+
+/* Popups/tooltips (caso use futuramente) */
+.leaflet-popup-content-wrapper{
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,.30);
+  box-shadow: 0 20px 40px -28px rgba(2,6,23,.85);
+}
+.leaflet-tooltip{
+  background: rgba(2,6,23,.92);
+  color: var(--ms-text);
+  border: 1px solid rgba(15,23,42,.30);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+/* ------------------- Footer · aprimorado ------------------- */
+/* base do footer */
+footer{
+  position: relative;
+  background:
+    radial-gradient(1200px 300px at 20% 0%, rgba(14,165,233,.07), transparent 60%),
+    linear-gradient(180deg, transparent, rgba(2,6,23,.35));
+}
+
+/* títulos das colunas */
+footer h4{
+  color:#e5e7eb;           /* slate-200 */
+  letter-spacing:.02em;
+}
+footer h4::after{
+  content:"";
+  display:block;
+  width:28px; height:2px;
+  margin-top:.5rem;
+  border-radius:2px;
+  background:linear-gradient(90deg,var(--ms-accent),var(--ms-accent-2));
+  opacity:.9;
+}
+
+/* links do footer (listas e contato) */
+footer ul li a{
+  position: relative;
+  color:#cbd5e1;           /* slate-300 */
+  transition: color .18s var(--ms-ease-1), transform .06s;
+}
+footer ul li a:hover{ color:#fff; }
+footer ul li a:active{ transform: translateY(1px); }
+
+/* sublinhado suave ao passar o mouse */
+footer ul li a::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-2px; height:1px;
+  background:linear-gradient(90deg,var(--ms-accent),var(--ms-accent-2));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .18s var(--ms-ease-1);
+  opacity:.85; border-radius:1px;
+}
+footer ul li a:hover::after{ transform:scaleX(1); }
+
+/* ícones (telefone, e-mail, etc.) */
+footer li i[data-lucide]{ color: color-mix(in oklab, var(--ms-accent-2) 80%, white); opacity:.95; }
+
+/* botões sociais (funciona no bloco com "flex items-center gap-3") */
+footer .flex.items-center.gap-3 a[aria-label]{
+  --s: 40px;
+  width:var(--s); height:var(--s);
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:999px;
+  border:1px solid var(--ms-border);
+  background: rgba(15,23,42,.60);
+  transition:
+    background .18s var(--ms-ease-1),
+    border-color .18s var(--ms-ease-1),
+    box-shadow .18s var(--ms-ease-1),
+    transform .06s;
+}
+footer .flex.items-center.gap-3 a[aria-label]:hover{
+  background: rgba(2,6,23,.72);
+  border-color: color-mix(in oklab, var(--ms-accent) 60%, var(--ms-border));
+  box-shadow: 0 14px 34px -22px color-mix(in oklab, var(--ms-accent-2) 70%, transparent);
+  transform: translateY(-1px);
+}
+
+/* barra inferior com divisor em degradê */
+footer > .mt-8{
+  position:relative;
+  border-top:none !important;    /* ignora utilitário do Tailwind */
+}
+footer > .mt-8::before{
+  content:"";
+  position:absolute; left:0; right:0; top:0; height:1px;
+  background:linear-gradient(90deg, transparent, var(--ms-border), transparent);
+  opacity:.65;
+}
+
+/* responsividade: respiro entre colunas no mobile */
+@media (max-width: 640px){
+  footer [class*="grid"]{ row-gap: 1.25rem; }
+}
+
+/* impressão: evita cor de fundo pesada */
+@media print{
+  footer{ background:#fff !important; }
+}
+
+/* ------------------- Utilitários ------------------- */
+.shadow-soft{ box-shadow: var(--ms-shadow-2); }
+.br-12{ border-radius: var(--ms-radius-1); }
+.br-16{ border-radius: var(--ms-radius-2); }
+.br-20{ border-radius: var(--ms-radius-3); }
+
+/* ------------------- Impressão (global) ------------------- */
+@media print{
+  header, .site-header, .topbar, #mapAreas, .leaflet-control-container{ display:none !important; }
+  a::after{ content:" (" attr(href) ")"; font-weight:normal; }
+  body{ background:#fff !important; color:#111827 !important; }
+}
+
+
+/* =====================================================
+   Effects (micro-interactions) • add-on
+   ===================================================== */
+
+/* Page fade-in */
+@keyframes pageFadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: none;} }
+body.fx-page-in { animation: pageFadeIn .45s ease both; }
+
+/* Underline slide for links */
+.fx-underline { position: relative; }
+.fx-underline::after{
+  content:""; position:absolute; left:0; right:100%; bottom:-2px; height:2px;
+  background: linear-gradient(90deg,var(--brand-2),var(--brand));
+  transition:right .25s ease;
+}
+.fx-underline:hover::after{ right:0; }
+
+/* Lift on hover for cards/buttons */
+.fx-lift{ transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease; }
+.fx-lift:hover{ transform: translateY(-3px); box-shadow: var(--shadow-2); border-color: color-mix(in oklab, var(--brand) 35%, var(--line)); }
+
+/* Glow pulse (use on icons/cta) */
+@keyframes glowPulse { 0%,100%{ box-shadow: 0 0 0 0 rgba(56,189,248,.0);} 50%{ box-shadow: 0 0 0 6px rgba(56,189,248,.08);} }
+.fx-glow{ animation: glowPulse 2.2s ease-in-out infinite; }
+
+/* Shimmer for primary buttons */
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.fx-shimmer{
+  background-image: linear-gradient(120deg, rgba(255,255,255,.12), rgba(255,255,255,0) 20%, rgba(255,255,255,.12) 40%);
+  background-size: 200% 100%;
+  animation: shimmer 2.2s linear infinite;
+}
+
+/* Ripple click (JS sets --rx/--ry) */
+.fx-ripple{
+  position: relative; overflow: hidden;
+  isolation: isolate;
+}
+.fx-ripple::after{
+  content:""; position:absolute; pointer-events:none; inset:0;
+  background: radial-gradient( circle at var(--rx,50%) var(--ry,50%), rgba(56,189,248,.35), transparent 35% );
+  opacity:0; transform: scale(.6);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.fx-ripple.is-rippling::after{ opacity:1; transform: scale(1); }
+.fx-ripple:active::after{ opacity:.85; transform: scale(1.1); transition: none; }
+
+/* Tilt (perspective) */
+.fx-tilt{ transform-style: preserve-3d; transition: transform .06s linear; }
+.fx-tilt .tilt-child{ transform: translateZ(20px); }
+
+/* Section separators / soft gradient top/bottom */
+.fx-soft-top{
+  position:relative;
+}
+.fx-soft-top::before{
+  content:""; position:absolute; inset: -40px 0 auto 0; height:40px;
+  background: linear-gradient(180deg, rgba(2,6,23,0), rgba(2,6,23,.6));
+  pointer-events:none;
+}
+
+
+
+/* === OVERRIDE: remover brilho/“glow” nos campos focados =================== */
+.field:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  box-shadow: none !important;   /* remove o efeito de glow */
+  outline: none !important;      /* sem contorno extra do navegador */
+  border-color: var(--brand) !important; /* mantém só a mudança sutil de borda */
+}
+
+/* Opcional: remover qualquer anel global de foco se existir */
+:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

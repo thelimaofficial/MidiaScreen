@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MidiaScreen - Contato</title>
+  <meta name="description" content="Fale com a MidiaScreen: orçamentos, dúvidas comerciais e abertura de chamado de suporte de TI (+20 anos de experiência)." />
+  <link rel="canonical" href="https://www.midiascreen.com.br/contato.html" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="MídiaScreen" />
+  <meta property="og:title" content="Contato — MidiaScreen" />
+  <meta property="og:description" content="Orçamentos, dúvidas e suporte de TI. WhatsApp, e-mail ou formulário. +20 anos de experiência." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-cover.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contato — MidiaScreen" />
+  <meta name="twitter:description" content="Orçamentos, dúvidas e suporte de TI. WhatsApp, e-mail ou formulário. +20 anos de experiência." />
+  <meta name="twitter:image" content="/assets/og-cover.jpg" />
+
+   <!-- Favicons (opcional, ajuste se tiver) -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+
+  <!-- CDNs -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Leaflet (mapa) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <style>
+    html{scroll-behavior:smooth}
+    ::selection{background:rgba(56,189,248,.30);color:#0f172a}
+    .site-header{transition:background-color .25s ease,border-color .25s ease,box-shadow .25s ease}
+    .site-header.is-scrolled{background-color:rgba(2,6,23,.9);border-color:rgba(15,23,42,.7);box-shadow:0 8px 20px -12px rgba(0,0,0,.5);backdrop-filter:saturate(120%) blur(8px)}
+    .reveal{opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease}
+    .reveal.in{opacity:1; transform:none}
+    .tab-btn{border:1px solid rgb(30 41 59); background:rgb(2 6 23 / .6); color:#e2e8f0}
+    .tab-btn[aria-selected="true"]{background:linear-gradient(135deg,#0ea5e9,#22d3ee); color:#0b1220; border-color:transparent}
+    .field{display:block;width:100%;border-radius:12px;border:1px solid rgb(30 41 59);background:rgb(2 6 23 / .6);color:#e2e8f0;padding:.75rem .875rem}
+    .hint{font-size:.8rem;color:rgb(148 163 184)}
+    .invalid{border-color:#ef4444}
+    details summary::-webkit-details-marker{display:none}
+    details[open] .chev{transform:rotate(180deg)}
+
+    /* Mapa */
+    #mapAreas { height: 360px; width: 100%; border-radius: 12px; overflow: hidden; }
+  </style>
+
+  <!-- JSON-LD: Organization + ContactPoint + HowTo -->
+  <script type="application/ld+json">
+  [{
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"MídiaScreen",
+    "url":"https://www.midiascreen.com.br",
+    "logo":"https://www.midiascreen.com.br/assets/midiascreen-logotipo-SF1.png",
+    "address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},
+    "contactPoint":[
+      {"@type":"ContactPoint","contactType":"sales","availableLanguage":"pt-BR","areaServed":"BR","email":"contato@midiascreen.com.br","telephone":"+55-11-96381-5913"},
+      {"@type":"ContactPoint","contactType":"customer support","availableLanguage":"pt-BR","areaServed":"BR","email":"contato@midiascreen.com.br","telephone":"+55-11-96381-5913"}
+    ],
+    "sameAs":[
+      "https://instagram.com/midiascreen",
+      "https://facebook.com/midiascreen",
+      "https://www.linkedin.com/company/midiascreen",
+      "https://youtube.com/@midiascreen"
+    ]
+  },{
+    "@context":"https://schema.org",
+    "@type":"HowTo",
+    "name":"Como abrir um chamado de suporte",
+    "step":[
+      {"@type":"HowToStep","name":"Descreva o problema","text":"Informe empresa, contato, categoria e descrição."},
+      {"@type":"HowToStep","name":"Escolha o canal","text":"Envie pelo WhatsApp ou por e-mail."},
+      {"@type":"HowToStep","name":"Acesso remoto","text":"Se possível, informe o ID do AnyDesk/TeamViewer para agilizar."}
+    ]
+  }]
+  </script>
+  <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <a class="sr-only focus:not-sr-only absolute left-4 top-4 z-50 rounded bg-slate-100 px-3 py-2 text-slate-900" href="#conteudo">Pular para conteúdo</a>
+
+  <!-- Top Bar -->
+  <div class="hidden md:block bg-slate-900/70 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-xs flex items-center gap-6 justify-between">
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="inline-flex items-center gap-2"><i data-lucide="clock" class="h-3.5 w-3.5"></i> Seg–Sex: 08h–18h</span>
+        <span class="inline-flex items-center gap-2"><i data-lucide="map-pin" class="h-3.5 w-3.5"></i> São Paulo — SP</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-300">
+        <a href="mailto:contato@midiascreen.com.br" class="inline-flex items-center gap-2 hover:text-sky-300 transition-colors"><i data-lucide="mail" class="h-3.5 w-3.5"></i> contato@midiascreen.com.br</a>
+        <a href="tel:+5511984862804" aria-label="Ligar para MMidiaScreen" class="inline-flex items-center gap-2 hover:text-sky-300 transition-colors"><i data-lucide="phone" class="h-3.5 w-3.5"></i> (11) 9 8486-2804</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header sticky top-0 z-40 backdrop-blur bg-slate-950/70 border-b border-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-semibold tracking-tight text-lg">
+        <img src="assets/midiascreen-logotipo-SF1.png" alt="MIDIASCREEN" class="h-8 sm:h-9 w-auto" decoding="async"/>
+      </a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg border border-slate-800 p-2 text-slate-200 hover:bg-slate-900/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300" aria-label="Menu principal">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="servicos.html" class="hover:text-white transition-colors">Serviços</a>
+        <a href="sobre.html" class="hover:text-white transition-colors">Sobre</a>
+        <a href="faq.html" class="hover:text-white transition-colors">Dúvidas</a>
+        <a href="contato.html" class="hover:text-white transition-colors">Contato</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a target="_blank" rel="noopener" href="https://wa.me/55119848628044?text=Ol%C3%A1%20M%C3%ADdiaScreen!%20Quero%20um%20or%C3%A7amento." class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-400 px-4 py-2 text-slate-950 font-semibold hover:brightness-110">
+          <i data-lucide="message-square" class="h-4 w-4"></i> Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+    <div id="mobile-nav" class="hidden md:hidden border-t border-slate-900/60 bg-slate-950/95">
+      <nav class="px-4 py-3 flex flex-col gap-3 text-slate-300" aria-label="Menu mobile">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="servicos.html" class="hover:text-white">Serviços</a>
+        <a href="sobre.html" class="hover:text-white">Sobre</a>
+        <a href="faq.html" class="hover:text-white">Dúvidas</a>
+        <a href="contato.html" class="hover:text-white">Contato</a>
+        <a target="_blank" rel="noopener" href="https://wa.me/55119848628044?text=Ol%C3%A1%20M%C3%ADdiaScreen!%20Quero%20um%20or%C3%A7amento." class="mt-2 inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-400 px-4 py-2 text-slate-950 font-semibold hover:brightness-110">
+          <i data-lucide="message-square" class="h-4 w-4"></i> WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="pt-10 pb-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight reveal">Fale com a MidiaScreen</h1>
+      <p class="mt-2 text-slate-300/90 max-w-3xl reveal">
+        Orçamentos, dúvidas e suporte — no seu canal preferido.
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-2.5 py-0.5 text-xs align-middle ml-1">
+          <i data-lucide="award" class="h-3.5 w-3.5 text-sky-300"></i> +20 anos de experiência
+        </span>
+      </p>
+
+      <!-- Tabs -->
+      <div class="mt-5 reveal flex items-center gap-2" role="tablist" aria-label="Formulários de contato">
+        <button id="tab-orc" class="tab-btn rounded-xl px-4 py-2 text-sm font-medium" role="tab" aria-selected="true" aria-controls="painel-orc">Pedir orçamento</button>
+        <button id="tab-sup" class="tab-btn rounded-xl px-4 py-2 text-sm font-medium" role="tab" aria-selected="false" aria-controls="painel-sup">Abrir chamado (suporte)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <main id="conteudo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 space-y-10">
+
+    <!-- Painel: Orçamento / Comercial -->
+    <section id="painel-orc" class="reveal rounded-2xl border border-slate-800 bg-slate-900/40 p-6" role="tabpanel" aria-labelledby="tab-orc">
+      <div class="grid lg:grid-cols-[1fr_360px] gap-8">
+        <form id="formOrc" class="space-y-4" novalidate>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm text-slate-300" for="empresaO">Empresa</label>
+              <input class="field" id="empresaO" required placeholder="Nome da empresa">
+            </div>
+            <div>
+              <label class="text-sm text-slate-300" for="contatoO">Seu nome</label>
+              <input class="field" id="contatoO" required placeholder="Quem está falando com a gente">
+            </div>
+            <div>
+              <label class="text-sm text-slate-300" for="emailO">E-mail</label>
+              <input class="field" id="emailO" type="email" required placeholder="voce@empresa.com.br">
+            </div>
+            <div>
+              <label class="text-sm text-slate-300" for="telefoneO">Telefone / WhatsApp</label>
+              <input class="field" id="telefoneO" type="tel" placeholder="(11) 98486-2804">
+            </div>
+          </div>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <label class="text-sm text-slate-300" for="cidadeO">Cidade / UF</label>
+              <input class="field" id="cidadeO" placeholder="Ex.: São Paulo / SP">
+            </div>
+            <div>
+              <label class="text-sm text-slate-300" for="tamanhoO">Tamanho da equipe</label>
+              <select id="tamanhoO" class="field">
+                <option value="" selected>Selecione…</option>
+                <option>1–10</option><option>11–30</option><option>31–60</option><option>61–100</option><option>100+</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-sm text-slate-300" for="assuntoO">Assunto</label>
+              <select id="assuntoO" class="field">
+                <option selected>Orçamento</option>
+                <option>Parceria</option>
+                <option>Dúvidas</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="text-sm text-slate-300" for="mensagemO">Mensagem</label>
+            <textarea id="mensagemO" class="field" rows="5" placeholder="Conte o que você precisa, prazo e ambiente atual." required></textarea>
+          </div>
+          <label class="inline-flex items-center gap-2 text-sm text-slate-300">
+            <input id="lgpdO" type="checkbox" class="h-4 w-4 rounded border-slate-700 bg-slate-950" required>
+            Autorizo o contato conforme a <a href="politica-privacidade.html" class="underline hover:text-slate-200">Política de Privacidade</a>.
+          </label>
+          <div class="flex flex-wrap gap-3">
+            <button id="btnWhatsOrc" type="button" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-400 px-5 py-3 text-slate-950 font-semibold hover:brightness-110">
+              <i data-lucide="message-square" class="h-5 w-5"></i> Enviar no WhatsApp
+            </button>
+            <button id="btnEmailOrc" type="button" class="inline-flex items-center gap-2 rounded-xl border border-slate-800 px-5 py-3 text-slate-200 hover:bg-slate-900/60">
+              <i data-lucide="mail" class="h-5 w-5"></i> Enviar por e-mail
+            </button>
+          </div>
+          <p id="msgOrc" class="mt-2 text-sm"></p>
+        </form>
+
+        <!-- Bloco lateral comercial -->
+        <aside class="space-y-4">
+          <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+            <h3 class="font-medium">Canais</h3>
+            <ul class="mt-2 text-sm text-slate-300/90 space-y-1.5">
+              <li class="inline-flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4 text-sky-300"></i> <a href="tel:+5511984862804" class="hover:text-white">(11) 98486-2804</a></li>
+              <li class="inline-flex items-center gap-2"><i data-lucide="message-square" class="h-4 w-4 text-sky-300"></i> <a target="_blank" rel="noopener" class="hover:text-white" href="https://wa.me/55119848628044?text=Ol%C3%A1%20M%C3%ADdiaScreen!%20Quero%20um%20or%C3%A7amento.">WhatsApp</a></li>
+              <li class="inline-flex items-center gap-2"><i data-lucide="mail" class="h-4 w-4 text-sky-300"></i> <a class="hover:text-white" href="mailto:contato@midiascreen.com.br">contato@midiascreen.com.br</a></li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+            <h3 class="font-medium">Redes sociais</h3>
+            <div class="mt-2 flex items-center gap-3">
+              <a href="https://instagram.com/midiascreen" target="_blank" rel="noopener" aria-label="Instagram" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+              <a href="https://facebook.com/midiascreen" target="_blank" rel="noopener" aria-label="Facebook" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+              <a href="https://www.linkedin.com/company/midiascreen" target="_blank" rel="noopener" aria-label="LinkedIn" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="linkedin" class="h-4 w-4"></i></a>
+              <a href="https://youtube.com/@midiascreen" target="_blank" rel="noopener" aria-label="YouTube" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="youtube" class="h-4 w-4"></i></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Painel: Suporte / Abrir chamado -->
+    <section id="painel-sup" class="reveal rounded-2xl border border-slate-800 bg-slate-900/40 p-6 hidden" role="tabpanel" aria-labelledby="tab-sup">
+      <a id="suporte" class="sr-only">Âncora: suporte</a>
+      <div class="grid lg:grid-cols-[1fr_360px] gap-8">
+        <form id="formSup" class="space-y-4" novalidate>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div><label class="text-sm text-slate-300" for="empresaS">Empresa</label><input class="field" id="empresaS" required></div>
+            <div><label class="text-sm text-slate-300" for="contatoS">Seu nome</label><input class="field" id="contatoS" required></div>
+            <div><label class="text-sm text-slate-300" for="emailS">E-mail</label><input class="field" id="emailS" type="email" placeholder="voce@empresa.com.br"></div>
+            <div><label class="text-sm text-slate-300" for="telefoneS">Telefone / WhatsApp</label><input class="field" id="telefoneS" type="tel" placeholder="(11) 98486-2804"></div>
+            <div>
+              <label class="text-sm text-slate-300" for="categoriaS">Categoria</label>
+              <select id="categoriaS" class="field" required>
+                <option value="" disabled selected>Selecione…</option>
+                <option>Suporte & Help Desk</option>
+                <option>Computadores</option>
+                <option>Redes & Wi-Fi</option>
+                <option>Servidores & Virtualização</option>
+                <option>Microsoft 365 / Google</option>
+                <option>Segurança</option>
+                <option>Backup & Recuperação</option>
+                <option>Documentação & Inventário</option>
+                <option>Projetos & Consultoria</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-sm text-slate-300" for="urgenciaS">Urgência</label>
+              <select id="urgenciaS" class="field">
+                <option>Baixa</option><option>Média</option><option>Alta</option><option>Parada total</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="text-sm text-slate-300" for="descricaoS">Descrição do problema</label>
+            <textarea id="descricaoS" class="field" rows="5" required placeholder="O que acontece, desde quando, em quantos usuários/máquinas?"></textarea>
+            <p class="hint mt-1">Inclua prints e mensagens de erro se possível.</p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div><label class="text-sm text-slate-300" for="idRemotoS">ID de acesso remoto (AnyDesk/TeamViewer)</label><input id="idRemotoS" class="field" placeholder="Ex.: 123 456 789"></div>
+            <div><label class="text-sm text-slate-300" for="anexosS">Links de prints/arquivos</label><input id="anexosS" class="field" type="url" placeholder="Drive/OneDrive/WeTransfer"></div>
+          </div>
+          <label class="inline-flex items-center gap-2 text-sm text-slate-300">
+            <input id="lgpdS" type="checkbox" class="h-4 w-4 rounded border-slate-700 bg-slate-950" required>
+            Autorizo o contato e o tratamento dos dados conforme a <a href="politica-privacidade.html" class="underline hover:text-slate-200">Política de Privacidade</a>.
+          </label>
+          <div class="flex flex-wrap gap-3">
+            <button id="btnWhatsSup" type="button" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-400 px-5 py-3 text-slate-950 font-semibold hover:brightness-110">
+              <i data-lucide="message-square" class="h-5 w-5"></i> Enviar via WhatsApp
+            </button>
+            <button id="btnEmailSup" type="button" class="inline-flex items-center gap-2 rounded-xl border border-slate-800 px-5 py-3 text-slate-200 hover:bg-slate-900/60">
+              <i data-lucide="mail" class="h-5 w-5"></i> Enviar por e-mail
+            </button>
+            <button id="btnCopiarSup" type="button" class="inline-flex items-center gap-2 rounded-xl border border-slate-800 px-5 py-3 text-slate-200 hover:bg-slate-900/60">
+              <i data-lucide="copy" class="h-5 w-5"></i> Copiar
+            </button>
+          </div>
+          <p id="msgSup" class="mt-2 text-sm"></p>
+        </form>
+
+        <!-- Lateral -->
+        <aside class="space-y-4">
+          <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+            <h3 class="font-medium">Antes de abrir</h3>
+            <ul class="mt-2 text-sm text-slate-300/90 space-y-2">
+              <li class="inline-flex items-start gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-sky-300 mt-0.5"></i> Reinicie e teste outra tomada/porta.</li>
+              <li class="inline-flex items-start gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-sky-300 mt-0.5"></i> Teste em outro cabo/rede Wi-Fi.</li>
+              <li class="inline-flex items-start gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-sky-300 mt-0.5"></i> Verifique se outras pessoas foram afetadas.</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+            <h3 class="font-medium">Downloads úteis</h3>
+            <div class="mt-3 grid grid-cols-2 gap-3">
+              <a target="_blank" rel="noopener" href="https://anydesk.com/pt/downloads" class="rounded-xl border border-slate-800 px-3 py-2 text-sm hover:bg-slate-900/60 inline-flex items-center gap-2"><i data-lucide="mouse-pointer-square-dashed" class="h-4 w-4 text-sky-300"></i> AnyDesk</a>
+              <a target="_blank" rel="noopener" href="https://www.teamviewer.com/pt-br/download" class="rounded-xl border border-slate-800 px-3 py-2 text-sm hover:bg-slate-900/60 inline-flex items-center gap-2"><i data-lucide="monitor-smartphone" class="h-4 w-4 text-sky-300"></i> TeamViewer</a>
+            </div>
+            <p class="hint mt-2">Depois, informe o <strong>ID</strong> no formulário.</p>
+          </div>
+          <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+            <h3 class="font-medium">Canais</h3>
+            <ul class="mt-2 text-sm text-slate-300/90 space-y-1.5">
+              <li class="inline-flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4 text-sky-300"></i> <a href="tel:+5511984862804" class="hover:text-white">(11) 98486-2804</a></li>
+              <li class="inline-flex items-center gap-2"><i data-lucide="message-square" class="h-4 w-4 text-sky-300"></i> <a target="_blank" rel="noopener" class="hover:text-white" href="https://wa.me/55119848628044?text=Ol%C3%A1%20M%C3%ADdiaScreen!%20Preciso%20de%20suporte.">WhatsApp</a></li>
+              <li class="inline-flex items-center gap-2"><i data-lucide="mail" class="h-4 w-4 text-sky-300"></i> <a class="hover:text-white" href="mailto:contato@midiascreen.com.br">contato@midiascreen.com.br</a></li>
+            </ul>
+          </div>
+          <p class="text-xs text-slate-400">Horário comercial: Seg–Sex 08h–18h. Urgências fora do horário: priorize WhatsApp.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Áreas de atendimento (apenas no mapa) -->
+    <section class="reveal rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+      <h3 class="text-lg font-semibold mb-3">Áreas de atendimento</h3>
+      <div id="mapAreas"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contato" class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <a href="index.html" class="font-semibold tracking-tight text-lg">
+          <img src="assets/midiascreen-logotipo-SF1.png" alt="MIDIASCREEN" class="h-8 sm:h-9 w-auto" loading="lazy" decoding="async"/>
+        </a>
+        <p class="mt-3 text-sm text-slate-400 max-w-md">Suporte de TI e infraestrutura para empresas. Atendimento próximo, prazos claros e foco em resultado.</p>
+        <div class="mt-4 flex items-center gap-3">
+          <a href="https://instagram.com/midiascreen" target="_blank" rel="noopener" aria-label="Instagram" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+          <a href="https://facebook.com/midiascreen" target="_blank" rel="noopener" aria-label="Facebook" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+          <a href="https://www.linkedin.com/company/midiascreen" target="_blank" rel="noopener" aria-label="LinkedIn" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="linkedin" class="h-4 w-4"></i></a>
+          <a href="https://youtube.com/@midiascreen" target="_blank" rel="noopener" aria-label="YouTube" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="youtube" class="h-4 w-4"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold mb-3">Contato</h4>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li class="inline-flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4"></i> <a href="tel:+5511984862804" class="hover:text-white">(11) 9 8486-2804</a></li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="mail" class="h-4 w-4"></i> <a href="mailto:contato@midiascreen.com.br" class="hover:text-white">contato@midiascreen.com.br</a></li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4"></i> São Paulo — SP</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold mb-3">Links</h4>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="servicos.html" class="hover:text-white">Serviços</a></li>
+          <li><a href="sobre.html" class="hover:text-white">Sobre</a></li>
+          <li><a href="faq.html" class="hover:text-white">Dúvidas</a></li>
+          <li><a href="contato.html" class="hover:text-white">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-slate-900/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-xs text-slate-500 flex items-center justify-between">
+        <span>© <span id="year"></span> MidiaScreen. Todos os direitos reservados.</span>
+        <a href="politica-privacidade.html" class="hover:text-slate-300">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const WA_NUMBER = "5511963815913"; // seu WhatsApp
+    const EMAIL_TO  = "contato@midiascreen.com.br"; // seu e-mail
+
+    function renderIcons(){ if (window.lucide) window.lucide.createIcons(); }
+    function onScrollHeader(){ const h=document.querySelector('.site-header'); if(!h) return; if (window.scrollY>8) h.classList.add('is-scrolled'); else h.classList.remove('is-scrolled'); }
+    function bindMenu(){ const btn=document.getElementById('menuBtn'); const nav=document.getElementById('mobile-nav'); if(!btn||!nav) return; btn.addEventListener('click',()=>{ const expanded=btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!expanded)); btn.innerHTML = expanded ? '<i data-lucide="menu" class="h-5 w-5"></i>' : '<i data-lucide="x" class="h-5 w-5"></i>'; renderIcons(); nav.classList.toggle('hidden'); }); }
+    function setYear(){ const y=document.getElementById('year'); if (y) y.textContent=new Date().getFullYear(); }
+
+    // Link ativo no menu
+    (function () {
+      const here = location.pathname.replace(/\/+$/, '');
+      document.querySelectorAll('header nav a').forEach(a => {
+        const path = new URL(a.href, location.origin).pathname.replace(/\/+$/, '');
+        if (path && path === here) { a.classList.add('text-white'); a.setAttribute('aria-current','page'); }
+      });
+    })();
+
+    // Reveal on scroll
+    (function(){
+      const els=[...document.querySelectorAll('.reveal')];
+      if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+      const io=new IntersectionObserver(es=>es.forEach(({isIntersecting,target})=>{
+        if(isIntersecting){target.classList.add('in'); io.unobserve(target);}
+      }),{threshold:.1});
+      els.forEach(e=>io.observe(e));
+    })();
+
+    // Tabs
+    const tabOrc = document.getElementById('tab-orc');
+    const tabSup = document.getElementById('tab-sup');
+    const painelOrc = document.getElementById('painel-orc');
+    const painelSup = document.getElementById('painel-sup');
+
+    function selectTab(which){
+      const isOrc = which==='orc';
+      tabOrc.setAttribute('aria-selected', isOrc ? 'true' : 'false');
+      tabSup.setAttribute('aria-selected', !isOrc ? 'true' : 'false');
+      painelOrc.classList.toggle('hidden', !isOrc);
+      painelSup.classList.toggle('hidden', isOrc);
+      if(!isOrc) location.hash = 'suporte';
+    }
+    tabOrc?.addEventListener('click', ()=>selectTab('orc'));
+    tabSup?.addEventListener('click', ()=>selectTab('sup'));
+
+    // Se veio com hash #suporte, abre a aba de suporte
+    if (location.hash.replace('#','') === 'suporte') selectTab('sup');
+
+    // Helpers
+    function markInvalid(el, cond){ el.classList.toggle('invalid', cond); return !cond; }
+    function enc(s){ return encodeURIComponent(s || ''); }
+
+    // Form Orçamento
+    function orcOk(){
+      const ok = [
+        markInvalid(document.getElementById('empresaO'), !empresaO.value.trim()),
+        markInvalid(document.getElementById('contatoO'), !contatoO.value.trim()),
+        markInvalid(document.getElementById('emailO'), !emailO.value.trim()),
+        markInvalid(document.getElementById('mensagemO'), !mensagemO.value.trim()),
+        markInvalid(document.getElementById('lgpdO'), !lgpdO.checked)
+      ].every(Boolean);
+      return ok;
+    }
+    function orcMsg(){
+      return [
+        '*Pedido de orçamento*',
+        `Empresa: ${empresaO.value}`,
+        `Contato: ${contatoO.value}`,
+        `E-mail: ${emailO.value}`,
+        telefoneO.value ? `Telefone/WhatsApp: ${telefoneO.value}` : null,
+        cidadeO.value ? `Cidade/UF: ${cidadeO.value}` : null,
+        tamanhoO.value ? `Equipe: ${tamanhoO.value}` : null,
+        `Assunto: ${assuntoO.value}`,
+        '',
+        mensagemO.value
+      ].filter(Boolean).join('\n');
+    }
+
+    // Form Suporte
+    function supOk(){
+      const haveContact = emailS.value.trim() || telefoneS.value.trim();
+      const ok = [
+        markInvalid(empresaS, !empresaS.value.trim()),
+        markInvalid(contatoS, !contatoS.value.trim()),
+        markInvalid(categoriaS, !categoriaS.value),
+        markInvalid(descricaoS, !descricaoS.value.trim()),
+        markInvalid(lgpdS, !lgpdS.checked),
+        markInvalid(emailS, !haveContact),
+        markInvalid(telefoneS, !haveContact)
+      ].every(Boolean);
+      return ok;
+    }
+    function supMsg(){
+      return [
+        '*Chamado de Suporte*',
+        `Empresa: ${empresaS.value}`,
+        `Contato: ${contatoS.value}`,
+        emailS.value ? `E-mail: ${emailS.value}` : null,
+        telefoneS.value ? `Telefone/WhatsApp: ${telefoneS.value}` : null,
+        `Categoria: ${categoriaS.value}`,
+        `Urgência: ${urgenciaS.value}`,
+        `Descrição: ${descricaoS.value}`,
+        idRemotoS.value ? `ID remoto: ${idRemotoS.value}` : null,
+        anexosS.value ? `Links/Anexos: ${anexosS.value}` : null
+      ].filter(Boolean).join('\n');
+    }
+
+    // Botões Orçamento
+    btnWhatsOrc.addEventListener('click', ()=>{
+      if(!orcOk()){ msgOrc.textContent='Preencha os campos obrigatórios e marque o consentimento.'; msgOrc.className='mt-2 text-sm text-rose-400'; return; }
+      window.open(`https://wa.me/${WA_NUMBER}?text=${enc(orcMsg())}`,'_blank');
+      msgOrc.textContent='Mensagem preparada no WhatsApp 👌'; msgOrc.className='mt-2 text-sm text-emerald-400';
+    });
+    btnEmailOrc.addEventListener('click', ()=>{
+      if(!orcOk()){ msgOrc.textContent='Preencha os campos obrigatórios e marque o consentimento.'; msgOrc.className='mt-2 text-sm text-rose-400'; return; }
+      window.location.href = `mailto:${EMAIL_TO}?subject=${enc('Orçamento — ' + empresaO.value)}&body=${enc(orcMsg())}`;
+      msgOrc.textContent='Abrindo seu cliente de e-mail…'; msgOrc.className='mt-2 text-sm text-slate-300';
+    });
+
+    // Botões Suporte
+    btnWhatsSup.addEventListener('click', ()=>{
+      if(!supOk()){ msgSup.textContent='Preencha os campos obrigatórios (e-mail ou telefone) e marque o consentimento.'; msgSup.className='mt-2 text-sm text-rose-400'; return; }
+      window.open(`https://wa.me/${WA_NUMBER}?text=${enc(supMsg())}`,'_blank');
+      msgSup.textContent='Mensagem preparada no WhatsApp 👌'; msgSup.className='mt-2 text-sm text-emerald-400';
+    });
+    btnEmailSup.addEventListener('click', ()=>{
+      if(!supOk()){ msgSup.textContent='Preencha os campos obrigatórios (e-mail ou telefone) e marque o consentimento.'; msgSup.className='mt-2 text-sm text-rose-400'; return; }
+      window.location.href = `mailto:${EMAIL_TO}?subject=${enc('Chamado — ' + empresaS.value)}&body=${enc(supMsg())}`;
+      msgSup.textContent='Abrindo seu cliente de e-mail…'; msgSup.className='mt-2 text-sm text-slate-300';
+    });
+    btnCopiarSup.addEventListener('click', async ()=>{
+      try { await navigator.clipboard.writeText(supMsg()); msgSup.textContent='Chamado copiado 📋'; msgSup.className='mt-2 text-sm text-emerald-400'; }
+      catch { msgSup.textContent='Não foi possível copiar (permissão do navegador).'; msgSup.className='mt-2 text-sm text-rose-400'; }
+    });
+
+    // ---- MAPA: Áreas de atendimento (polígono sem nomes) ----
+    function initAreasMap(){
+      // Pontos (centroides aproximados) das cidades atendidas
+      const pts = [
+        { lat: -23.55052, lng: -46.63331 }, // São Paulo
+        { lat: -23.5320,  lng: -46.7917  }, // Osasco
+        { lat: -23.4543,  lng: -46.5333  }, // Guarulhos
+        { lat: -23.6815,  lng: -46.6200  }, // Diadema
+        { lat: -23.6572,  lng: -46.5331  }, // Santo André
+        { lat: -23.6229,  lng: -46.5548  }, // São Caetano do Sul
+        { lat: -23.6898,  lng: -46.5648  }, // São Bernardo do Campo
+        { lat: -23.6020,  lng: -46.7910  }  // Taboão da Serra
+      ];
+
+      // Mapa com tiles claros (estilo "Google-like")
+      const map = L.map('mapAreas', { scrollWheelZoom: false });
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+      }).addTo(map);
+
+      // Convex Hull (monotone chain) para gerar o polígono que envolve os pontos
+      const ptsXY = pts.map(p => ({ x: p.lng, y: p.lat }));
+      ptsXY.sort((a,b)=> a.x===b.x ? a.y-b.y : a.x-b.x);
+      const cross = (o,a,b)=> (a.x-o.x)*(b.y-o.y) - (a.y-o.y)*(b.x-o.x);
+
+      const lower = [];
+      for (const p of ptsXY) {
+        while (lower.length >= 2 && cross(lower[lower.length-2], lower[lower.length-1], p) <= 0) lower.pop();
+        lower.push(p);
+      }
+      const upper = [];
+      for (let i=ptsXY.length-1; i>=0; i--) {
+        const p = ptsXY[i];
+        while (upper.length >= 2 && cross(upper[upper.length-2], upper[upper.length-1], p) <= 0) upper.pop();
+        upper.push(p);
+      }
+      const hull = lower.slice(0,-1).concat(upper.slice(0,-1));
+      const hullLatLng = hull.map(p => [p.y, p.x]);
+
+      // Polígono de demarcação (sem labels)
+      const poly = L.polygon(hullLatLng, {
+        color: '#0ea5e9',
+        weight: 3,
+        fillColor: '#22d3ee',
+        fillOpacity: 0.18
+      }).addTo(map);
+
+      map.fitBounds(poly.getBounds().pad(0.2));
+    }
+
+    window.addEventListener('DOMContentLoaded', ()=>{
+      renderIcons(); bindMenu(); onScrollHeader(); setYear();
+      if (document.getElementById('mapAreas')) initAreasMap();
+    });
+    window.addEventListener('scroll', onScrollHeader, { passive:true });
+  </script>
+  <script src="scripts.js?v=2"></script>
+</body>
+</html>

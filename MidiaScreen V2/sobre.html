@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MidiaScreen - Sobre</title>
+  <meta name="description" content="Quem somos, como trabalhamos e o que guia a MídiaScreen no suporte de TI para empresas." />
+  <link rel="canonical" href="https://www.midiascreen.com.br/sobre.html" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph + Twitter -->
+  <meta property="og:site_name" content="MídiaScreen" />
+  <meta property="og:title" content="Sobre — MídiaScreen" />
+  <meta property="og:description" content="Quem somos, como trabalhamos e o que guia a MídiaScreen no suporte de TI para empresas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-cover.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sobre — MídiaScreen" />
+  <meta name="twitter:description" content="Quem somos, como trabalhamos e o que guia a MídiaScreen no suporte de TI para empresas." />
+  <meta name="twitter:image" content="/assets/og-cover.jpg" />
+
+   <!-- Favicons (opcional, ajuste se tiver) -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+
+  <!-- CDNs -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    html{scroll-behavior:smooth}
+    ::selection{background:rgba(56,189,248,.30);color:#0f172a}
+    .site-header{transition:background-color .25s ease,border-color .25s ease,box-shadow .25s ease}
+    .site-header.is-scrolled{background-color:rgba(2,6,23,.9);border-color:rgba(15,23,42,.7);box-shadow:0 8px 20px -12px rgba(0,0,0,.5);backdrop-filter:saturate(120%) blur(8px)}
+    .reveal{opacity:0; transform:translateY(12px); transition:opacity .5s ease, transform .5s ease}
+    .reveal.in{opacity:1; transform:none}
+  </style>
+
+  <!-- JSON-LD: AboutPage + Organization -->
+  <script type="application/ld+json">
+  [{
+    "@context":"https://schema.org",
+    "@type":"AboutPage",
+    "name":"Sobre — MídiaScreen",
+    "url":"https://www.midiascreen.com.br/sobre.html",
+    "primaryImageOfPage":{"@type":"ImageObject","url":"https://www.midiascreen.com.br/assets/og-cover.jpg"},
+    "mainEntity":{"@type":"Organization","name":"MídiaScreen","url":"https://www.midiascreen.com.br"}
+  },{
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"MídiaScreen",
+    "url":"https://www.midiascreen.com.br",
+    "logo":"https://www.midiascreen.com.br/assets/midiascreen-logotipo-SF1.png",
+    "telephone":"+55-11-98486-2804",
+    "address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},
+    "sameAs":[
+      "https://instagram.com/midiascreen",
+      "https://facebook.com/midiascreen",
+      "https://www.linkedin.com/company/midiascreen",
+      "https://youtube.com/@midiascreen"
+    ]
+  }]
+  </script>
+  <link rel="stylesheet" href="styles.css?v=7">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <a class="sr-only focus:not-sr-only absolute left-4 top-4 z-50 rounded bg-slate-100 px-3 py-2 text-slate-900" href="#conteudo">Pular para conteúdo</a>
+
+  <!-- Top Bar -->
+  <div class="hidden md:block bg-slate-900/70 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-xs flex items-center gap-6 justify-between">
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="inline-flex items-center gap-2"><i data-lucide="clock" class="h-3.5 w-3.5"></i> Seg–Sex: 08h–18h</span>
+        <span class="inline-flex items-center gap-2"><i data-lucide="map-pin" class="h-3.5 w-3.5"></i> São Paulo — SP</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-300">
+        <a href="mailto:contato@midiascreen.com.br" class="inline-flex items-center gap-2 hover:text-sky-300 transition-colors"><i data-lucide="mail" class="h-3.5 w-3.5"></i> contato@midiascreen.com.br</a>
+        <a href="tel:+5511984862804" aria-label="Ligar para MMidiaScreen" class="inline-flex items-center gap-2 hover:text-sky-300 transition-colors"><i data-lucide="phone" class="h-3.5 w-3.5"></i> (11) 9 8486-2804</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header (igual ao index) -->
+  <header class="site-header sticky top-0 z-40 backdrop-blur bg-slate-950/70 border-b border-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="font-semibold tracking-tight text-lg">
+        <img src="assets/midiascreen-logotipo-SF1.png" alt="MIDIASCREEN" class="h-8 sm:h-9 w-auto" decoding="async"/>
+      </a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg border border-slate-800 p-2 text-slate-200 hover:bg-slate-900/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menu">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300" aria-label="Menu principal">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="servicos.html" class="hover:text-white transition-colors">Serviços</a>
+        <a href="sobre.html" class="hover:text-white transition-colors">Sobre</a>
+        <a href="faq.html" class="hover:text-white transition-colors">Dúvidas</a>
+        <a href="contato.html" class="hover:text-white transition-colors">Contato</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a target="_blank" rel="noopener noreferrer" href="https://wa.me/55119848628044?text=Ol%C3%A1%20M%C3%ADdiaScreen!%20Quero%20um%20or%C3%A7amento%20de%20suporte%20de%20TI." class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-400 px-4 py-2 text-slate-950 font-semibold hover:brightness-110 active:scale-[.98] transition">
+          <i data-lucide="message-square" class="h-4 w-4"></i> Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+    <div id="mobile-nav" class="hidden md:hidden border-t border-slate-900/60 bg-slate-950/95">
+      <nav class="px-4 py-3 flex flex-col gap-3 text-slate-300" aria-label="Menu mobile">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="servicos.html" class="hover:text-white">Serviços</a>
+        <a href="sobre.html" class="hover:text-white">Sobre</a>
+        <a href="faq.html" class="hover:text-white">Dúvidas</a>
+        <a href="contato.html" class="hover:text-white">Contato</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://wa.me/55119848628044?text=Ol%C3%A1%20M%C3%ADdiaScreen!%20Quero%20um%20or%C3%A7amento%20de%20suporte%20de%20TI." class="mt-2 inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-400 px-4 py-2 text-slate-950 font-semibold hover:brightness-110">
+          <i data-lucide="message-square" class="h-4 w-4"></i> Falar no WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="pt-10 pb-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight reveal">Sobre a MídiaScreen</h1>
+      <p class="mt-2 text-slate-300/90 max-w-3xl reveal">Somos um time enxuto e sênior de suporte de TI para empresas — do dia a dia aos projetos, com foco em agilidade, segurança e resultado.</p>
+      <!-- Destaque de experiência -->
+      <div class="mt-4 reveal">
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">
+          <i data-lucide="award" class="h-3.5 w-3.5 text-sky-300"></i>
+          +20 anos de experiência no mercado
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <main id="conteudo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+    <!-- Quem somos -->
+    <section class="grid lg:grid-cols-2 gap-10 items-start">
+      <div class="reveal">
+        <div class="inline-flex items-center rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">Quem somos</div>
+        <h2 class="mt-4 text-2xl font-semibold">Especialistas em manter a sua TI fluindo</h2>
+        <p class="mt-3 text-slate-300/90">Do computador que não liga ao Wi-Fi que cai, do acesso de um colaborador novo ao e-mail que volta — resolvemos o que trava a operação. Presencial em São Paulo e região; remoto em todo o Brasil.</p>
+        <ul class="mt-4 space-y-2 text-sm text-slate-300/90">
+          <li class="inline-flex items-start gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-sky-300 mt-0.5"></i> Help Desk N1/N2 e visitas on-site sob agendamento</li>
+          <li class="inline-flex items-start gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-sky-300 mt-0.5"></i> Redes e infraestrutura: switches, roteadores, Wi-Fi corporativo, VLANs</li>
+          <li class="inline-flex items-start gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-sky-300 mt-0.5"></i> Servidores (Windows/Linux), virtualização e backup</li>
+          <li class="inline-flex items-start gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-sky-300 mt-0.5"></i> Microsoft 365 / Google Workspace, segurança e boas práticas LGPD</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+              <div class="h-9 w-9 rounded-lg bg-sky-500/15 text-sky-300 inline-flex items-center justify-center mb-3">
+                <i data-lucide="headphones" class="h-5 w-5"></i>
+              </div>
+              <h3 class="font-medium">Suporte próximo</h3>
+              <p class="text-sm text-slate-400 mt-1">Canal direto. Sem burocracia.</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+              <div class="h-9 w-9 rounded-lg bg-sky-500/15 text-sky-300 inline-flex items-center justify-center mb-3">
+                <i data-lucide="timer" class="h-5 w-5"></i>
+              </div>
+              <h3 class="font-medium">Agilidade</h3>
+              <p class="text-sm text-slate-400 mt-1">Resposta em minutos no horário comercial.</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+              <div class="h-9 w-9 rounded-lg bg-sky-500/15 text-sky-300 inline-flex items-center justify-center mb-3">
+                <i data-lucide="shield" class="h-5 w-5"></i>
+              </div>
+              <h3 class="font-medium">Segurança primeiro</h3>
+              <p class="text-sm text-slate-400 mt-1">Acessos mínimos, backup e atualização constante.</p>
+            </div>
+            <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+              <div class="h-9 w-9 rounded-lg bg-sky-500/15 text-sky-300 inline-flex items-center justify-center mb-3">
+                <i data-lucide="file-check-2" class="h-5 w-5"></i>
+              </div>
+              <h3 class="font-medium">Transparência</h3>
+              <p class="text-sm text-slate-400 mt-1">Relatos claros e próximos passos combinados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como trabalhamos -->
+    <section class="reveal">
+      <div class="inline-flex items-center rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">Como trabalhamos</div>
+      <h2 class="mt-4 text-2xl font-semibold">Processo simples, comunicação clara</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5">
+          <div class="h-8 w-8 rounded-lg bg-sky-500/15 text-sky-300 inline-flex items-center justify-center font-semibold">1</div>
+          <h3 class="mt-3 font-medium">Diagnóstico</h3>
+          <p class="text-sm text-slate-400 mt-1">Levantamos ambiente, riscos e prioridades. Proposta clara, sem letra miúda.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5">
+          <div class="h-8 w-8 rounded-lg bg-sky-500/15 text-sky-300 inline-flex items-center justify-center font-semibold">2</div>
+          <h3 class="mt-3 font-medium">Execução</h3>
+          <p class="text-sm text-slate-400 mt-1">Correções rápidas e projetos com janela de manutenção pré-combinada.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5">
+          <div class="h-8 w-8 rounded-lg bg-sky-500/15 text-sky-300 inline-flex items-center justify-center font-semibold">3</div>
+          <h3 class="mt-3 font-medium">Acompanhamento</h3>
+          <p class="text-sm text-slate-400 mt-1">Monitoramento, patching e relatórios com próximos passos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="reveal">
+      <div class="inline-flex items-center rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">Valores</div>
+      <h2 class="mt-4 text-2xl font-semibold">O que guia nosso trabalho</h2>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-slate-800 bg-slate-900/40 p-5"><h3 class="font-medium">Responsabilidade</h3><p class="text-sm text-slate-400 mt-1">Cuidamos do seu ambiente como se fosse nosso.</p></div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/40 p-5"><h3 class="font-medium">Foco no cliente</h3><p class="text-sm text-slate-400 mt-1">Solução prática e linguagem simples.</p></div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/40 p-5"><h3 class="font-medium">Transparência</h3><p class="text-sm text-slate-400 mt-1">Prazos e escopos combinados — e cumpridos.</p></div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/40 p-5"><h3 class="font-medium">Segurança</h3><p class="text-sm text-slate-400 mt-1">Princípio do menor privilégio e backups testados.</p></div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/40 p-5"><h3 class="font-medium">Simplicidade</h3><p class="text-sm text-slate-400 mt-1">Automatizar, padronizar e documentar.</p></div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/40 p-5"><h3 class="font-medium">Evolução contínua</h3><p class="text-sm text-slate-400 mt-1">Aprendizado e melhoria a cada atendimento.</p></div>
+      </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="reveal">
+      <div class="inline-flex items-center rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">Diferenciais</div>
+      <h2 class="mt-4 text-2xl font-semibold">Por que a MídiaScreen</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5 flex gap-3">
+          <i data-lucide="user-check" class="h-5 w-5 text-sky-300 mt-1"></i>
+          <div><h3 class="font-medium">Atendimento humano</h3><p class="text-sm text-slate-400 mt-1">Sem robô chato. Fale com quem resolve.</p></div>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5 flex gap-3">
+          <i data-lucide="alarm-clock" class="h-5 w-5 text-sky-300 mt-1"></i>
+          <div><h3 class="font-medium">Resposta rápida</h3><p class="text-sm text-slate-400 mt-1">SLA configurado conforme sua necessidade.</p></div>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5 flex gap-3">
+          <i data-lucide="file-cog" class="h-5 w-5 text-sky-300 mt-1"></i>
+          <div><h3 class="font-medium">Documentação</h3><p class="text-sm text-slate-400 mt-1">Inventário, credenciais e padrões sob controle.</p></div>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-5 flex gap-3">
+          <i data-lucide="shield-check" class="h-5 w-5 text-sky-300 mt-1"></i>
+          <div><h3 class="font-medium">Boas práticas</h3><p class="text-sm text-slate-400 mt-1">Segurança e conformidade do dia a dia à estratégia.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnologias (sem logos/parceiros) -->
+    <section class="reveal">
+      <div class="inline-flex items-center rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">Tecnologias que dominamos</div>
+      <div class="mt-4 rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-slate-300/90">
+          <li class="inline-flex items-center gap-2"><i data-lucide="server" class="h-4 w-4 text-sky-300"></i> Windows Server, Linux</li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="hard-drive" class="h-4 w-4 text-sky-300"></i> VMware, Hyper-V</li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="cloud" class="h-4 w-4 text-sky-300"></i> Microsoft 365, Google Workspace</li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="wifi" class="h-4 w-4 text-sky-300"></i> Redes: VLAN, Wi-Fi corporativo</li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="router" class="h-4 w-4 text-sky-300"></i> Mikrotik, Ubiquiti/UniFi</li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="shield" class="h-4 w-4 text-sky-300"></i> Fortinet, pfSense, antivírus/EDR</li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="folder-lock" class="h-4 w-4 text-sky-300"></i> Backup e recuperação</li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="notebook-pen" class="h-4 w-4 text-sky-300"></i> Inventário e documentação</li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="key-square" class="h-4 w-4 text-sky-300"></i> Acessos e MFA</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Linha do tempo -->
+   <section class="reveal rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+  <h2 class="text-xl md:text-2xl font-semibold tracking-tight">Linha do tempo</h2>
+  <ol class="ms-tl mt-4 text-slate-300/95">
+    <li class="ms-tl__item">
+      <strong class="text-slate-100">Início</strong> do atendimento sob demanda e estruturação do help desk.
+    </li>
+    <li class="ms-tl__item">
+      <strong class="text-slate-100">Ampliação</strong> para projetos de redes, Wi-Fi corporativo e servidores.
+    </li>
+    <li class="ms-tl__item">
+      <strong class="text-slate-100">Foco</strong> em segurança, backup e boas práticas para conformidade.
+    </li>
+  </ol>
+</section>
+
+
+    <!-- CTA -->
+    <section class="reveal">
+      <div class="rounded-2xl border border-slate-800 p-6 lg:p-10 bg-[radial-gradient(60%_120%_at_0%_0%,rgba(14,165,233,0.12),rgba(0,0,0,0))]">
+        <div class="grid lg:grid-cols-2 gap-6 items-center">
+          <div>
+            <h2 class="text-2xl font-semibold">Pronto para simplificar sua TI?</h2>
+            <p class="mt-2 text-slate-300/90">Conte com suporte próximo e ágil, do dia a dia ao projeto.</p>
+          </div>
+          <div class="flex lg:justify-end gap-3">
+            <a target="_blank" rel="noopener noreferrer" href="https://wa.me/55119848628044?text=Ol%C3%A1%20M%C3%ADdiaScreen!%20Quero%20um%20or%C3%A7amento%20de%20suporte%20de%20TI." class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-400 px-5 py-3 text-slate-950 font-semibold hover:brightness-110"><i data-lucide="message-square" class="h-5 w-5"></i> Falar no WhatsApp</a>
+            <a href="contato.html" class="inline-flex items-center gap-2 rounded-xl border border-slate-800 px-5 py-3 text-slate-200 hover:bg-slate-900/60"><i data-lucide="mail" class="h-5 w-5"></i> Ir para Contato</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <!-- Botão flutuante WhatsApp -->
+    <a target="_blank" rel="noopener noreferrer" href="https://wa.me/55119848628044?text=Ol%C3%A1%20M%C3%ADdiaScreen!%20Quero%20um%20or%C3%A7amento%20de%20suporte%20de%20TI." aria-label="Abrir WhatsApp" class="fixed bottom-5 right-5 inline-flex items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-cyan-400 h-12 w-12 shadow-lg shadow-sky-500/20 hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500">
+      <i data-lucide="message-square" class="h-5 w-5 text-slate-950"></i>
+    </a>
+    
+  <!-- Footer (igual ao index, com redes) -->
+  <footer id="contato" class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <a href="index.html" class="font-semibold tracking-tight text-lg">
+          <img src="assets/midiascreen-logotipo-SF1.png" alt="MIDIASCREEN" class="h-8 sm:h-9 w-auto" loading="lazy" decoding="async"/>
+        </a>
+        <p class="mt-3 text-sm text-slate-400 max-w-md">Suporte de TI e infraestrutura para empresas. Atendimento próximo, prazos claros e foco em resultado.</p>
+        <div class="mt-4 flex items-center gap-3">
+          <a href="https://instagram.com/midiascreen" target="_blank" rel="noopener" aria-label="Instagram" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+          <a href="https://facebook.com/midiascreen" target="_blank" rel="noopener" aria-label="Facebook" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="facebook" class="h-4 w-4"></i></a>
+          <a href="https://www.linkedin.com/company/midiascreen" target="_blank" rel="noopener" aria-label="LinkedIn" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="linkedin" class="h-4 w-4"></i></a>
+          <a href="https://youtube.com/@midiascreen" target="_blank" rel="noopener" aria-label="YouTube" class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-800 hover:bg-slate-900/60"><i data-lucide="youtube" class="h-4 w-4"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold mb-3">Contato</h4>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li class="inline-flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4"></i> <a href="tel:+5511984862804" class="hover:text-white">(11) 9 8486-2804</a></li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="mail" class="h-4 w-4"></i> <a href="mailto:contato@midiascreen.com.br" class="hover:text-white">contato@midiascreen.com.br</a></li>
+          <li class="inline-flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4"></i> São Paulo — SP</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-semibold mb-3">Links</h4>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="servicos.html" class="hover:text-white">Serviços</a></li>
+          <li><a href="sobre.html" class="hover:text-white">Sobre</a></li>
+          <li><a href="faq.html" class="hover:text-white">Dúvidas</a></li>
+          <li><a href="contato.html" class="hover:text-white">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-slate-900/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-xs text-slate-500 flex items-center justify-between">
+        <span>© <span id="year"></span> MidiaScreen. Todos os direitos reservados.</span>
+        <a href="politica-privacidade.html" class="hover:text-slate-300">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS compartilhado -->
+  <script>
+    function renderIcons(){ if (window.lucide) window.lucide.createIcons(); }
+    function onScrollHeader(){ const h=document.querySelector('.site-header'); if(!h) return; if (window.scrollY>8) h.classList.add('is-scrolled'); else h.classList.remove('is-scrolled'); }
+    function bindMenu(){ const btn=document.getElementById('menuBtn'); const nav=document.getElementById('mobile-nav'); if(!btn||!nav) return; btn.addEventListener('click',()=>{ const expanded=btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded', String(!expanded)); btn.innerHTML = expanded ? '<i data-lucide="menu" class="h-5 w-5"></i>' : '<i data-lucide="x" class="h-5 w-5"></i>'; renderIcons(); nav.classList.toggle('hidden'); }); }
+    function setYear(){ const y=document.getElementById('year'); if (y) y.textContent=new Date().getFullYear(); }
+
+    // Link ativo no menu
+    (function () {
+      const here = location.pathname.replace(/\/+$/, '');
+      document.querySelectorAll('header nav a').forEach(a => {
+        const path = new URL(a.href, location.origin).pathname.replace(/\/+$/, '');
+        if (path && path === here) { a.classList.add('text-white'); a.setAttribute('aria-current','page'); }
+      });
+    })();
+
+    // Reveal on scroll
+    (function(){
+      const els=[...document.querySelectorAll('.reveal')];
+      if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+      const io=new IntersectionObserver(es=>es.forEach(({isIntersecting,target})=>{
+        if(isIntersecting){target.classList.add('in'); io.unobserve(target);}
+      }),{threshold:.1});
+      els.forEach(e=>io.observe(e));
+    })();
+
+    window.addEventListener('DOMContentLoaded',()=>{ renderIcons(); bindMenu(); onScrollHeader(); setYear(); });
+    window.addEventListener('scroll', onScrollHeader, { passive:true });
+  </script>
+  <script src="scripts.js?v=2"></script>
+</body>
+</html>
