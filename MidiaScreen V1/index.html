@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="img/midiascreen-logo-SF.webp" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MídiaScreen | Suporte de TI para Empresas</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    a { color: white !important; }
+    .header-right a img {
+      width: 28px;
+      margin-left: 15px;
+    }
+    .contato img {
+      width: 24px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <img src="img/midiascreen-logotipo-SF1.webp" alt="Logo MídiaScreen" class="logo" />
+    </div>
+    <nav class="header-center">
+      <ul class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato" class="btn">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <a href="https://www.instagram.com/midiascreenoficial" target="_blank"><img src="img/insta.webp" alt="Instagram" /></a>
+      <a href="mailto:contato@midiascreen.com.br" target="_blank"><img src="img/mail.webp" alt="Email" /></a>
+      <a href="https://wa.me/5511984862804" target="_blank"><img src="img/wpp.webp" alt="WhatsApp" /></a>
+      <a href="https://www.linkedin.com/company/midiascreen/about/?viewAsMember=true" target="_blank"><img src="img/linkedin.webp" alt="linkedin" /></a>
+    </div>
+  </header>
+
+   <section class="hero">
+    <div class="container">
+      <h1>Tecnologia confiável para empresas que não podem parar.</h1>
+      <p>Suporte de TI completo com agilidade, segurança e atendimento personalizado para sua empresa crescer com estabilidade.</p>
+      <a href="https://wa.me/5511984862804" class="btn" target="_blank">Solicitar Orçamento</a>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <h2>Sobre a MídiaScreen</h2>
+      <p>🔧 Com mais de 20 anos de experiência no mercado, a MídiaScreen é especializada em suporte de TI para empresas que buscam eficiência, segurança e tranquilidade no uso da tecnologia.</p>
+      <p>Oferecemos soluções completas em manutenção, redes, infraestrutura e consultoria técnica, sempre com atendimento personalizado, ágil e focado em resultados reais para o seu negócio.</p>
+      <p>Trabalhamos para que a sua empresa nunca pare por causa da tecnologia — atuando de forma preventiva e estratégica para garantir o desempenho ideal dos seus sistemas, equipamentos e conexões.</p>
+      <p>Somos apaixonados por resolver problemas antes que eles aconteçam. E mais do que suporte técnico, entregamos parceria, confiança e estabilidade digital.</p>
+    </div>
+  </section>
+
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <h2>Nossos Serviços</h2>
+      <div class="servico-cards">
+        <div class="card">✅ Suporte técnico especializado</div>
+        <div class="card">✅ Manutenção de computadores e TVs</div>
+        <div class="card">✅ Instalação de redes</div>
+        <div class="card">✅ Infraestrutura de TI</div>
+        <div class="card">✅ Monitoramento preventivo</div>
+        <div class="card">✅ Atendimento remoto e presencial</div>
+      </div>
+      <div class="servico-imagens">
+        <img src="img/servico1.webp" alt="Serviço 1" />
+        <img src="img/servico2.webp" alt="Serviço 2" />
+        <img src="img/servico3.webp" alt="Serviço 3" />
+      </div>
+    </div>
+  </section>
+
+  
+<section id="contato" class="contato" style="background-color: #f9f9f9; padding: 60px 20px;">
+  <div class="container" style="max-width: 800px; margin: auto; background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <h2 style="text-align:center; color: #00111c;">Fale Conosco</h2>
+    <p style="text-align:center; margin-bottom: 30px;">Preencha o formulário abaixo e entraremos em contato o mais rápido possível.</p>
+    <form action="php/enviar-email.php" method="POST" style="display:flex; flex-direction: column; gap: 15px;">
+      <input type="text" name="nome" placeholder="Seu nome" required style="padding: 12px; border-radius: 6px; border: 1px solid #ccc;">
+      <input type="email" name="email" placeholder="Seu e-mail" required style="padding: 12px; border-radius: 6px; border: 1px solid #ccc;">
+      <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required style="padding: 12px; border-radius: 6px; border: 1px solid #ccc;"></textarea>
+      <button type="submit" style="background-color: #00bfff; color: white; padding: 14px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Enviar Mensagem</button>
+    </form>
+  </div>
+</section>
+
+
+  <footer style="background-color:#011623; color: #ffffff; padding: 40px 20px;">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 40px;">
+      <div style="flex: 1;">
+        <img src="img/midiascreen-logotipo-SF1.webp" alt="Logo MídiaScreen" style="height: 50px; margin-bottom: 10px;" />
+        <p style="margin-top: 10px;">"Tecnologia com confiança e parceria."</p>
+      </div>
+
+      <div style="flex: 1;">
+        <h4 style="margin-bottom: 10px;">Contato</h4>
+        <p>Email: contato@midiascreen.com.br</p>
+        <p>WhatsApp Kauan: (11) 96381-5913</p>
+        <p>WhatsApp Luís: (11) 98486-2804</p>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 30px;">© 2025 MídiaScreen. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

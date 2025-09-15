@@ -1,0 +1,166 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #00101d;
+  color: white;
+  line-height: 1.6;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+header {
+  background-color: #000a14;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  flex-wrap: wrap;
+}
+.header-left img {
+  height: 40px;
+}
+.header-center .menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.header-center .menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.header-center .menu li a.btn {
+  background-color: #00bfff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white !important;
+}
+.header-right a img {
+  width: 20px;
+  margin-left: 15px;
+}
+.hero {
+  background-color: #002032;
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.btn {
+  background-color: #00bfff;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #00bfff;
+}
+section p, section li {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.servico-imagens {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.servico-imagens img {
+  flex: 1;
+  min-width: 280px;
+  max-width: 32%;
+  border-radius: 8px;
+}
+.servico-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 20px 0;
+}
+.servico-cards .card {
+  flex: 1 1 280px;
+  background: #001c2e;
+  padding: 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  border-left: 4px solid #00bfff;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+input, textarea, button {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+}
+input, textarea {
+  background: #f1f1f1;
+  color: #000;
+}
+button {
+  background: #00bfff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0099cc;
+}
+.contato img {
+  vertical-align: middle;
+  margin-right: 8px;
+  width: 20px;
+  filter: brightness(1.2);
+}
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #000a14;
+  color: #aaa;
+  font-size: 14px;
+  border-top: 1px solid #003;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  .header-center .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  .servico-imagens {
+    flex-direction: column;
+  }
+  .servico-imagens img {
+    max-width: 100%;
+  }
+}
